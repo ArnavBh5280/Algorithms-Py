@@ -82,10 +82,20 @@ class SLL:
                     temp=temp.next
                         
                     
-            
-    
-        
-
+#     def __iter__(self):
+#         return SLLIterator(self.start) 
+# class SLLIterator:
+#     def __init__(self,start):
+#         self.current=start
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         if not self.current:
+#             raise StopIteration
+#         data=self.current.item
+#         self.surrent=self.current.next
+#         return data
+          
 #Driver Code
 mylist=SLL()
 mylist.insert_at_start(20)
@@ -95,7 +105,8 @@ mylist.insert_after(mylist.search(20),25)
 mylist.print_list()
 mylist.delete_item(20)
 print()
-mylist.print_list()
+# for x in mylist:
+#     print(x,end=' ')
 print()
             
             
