@@ -2,7 +2,9 @@
 
 # Write a python function to implement bubble sort.
 # Write a python function to implement modified bubble sort.
-# Write a python function to implement Selection Sort
+# Write a python function to implement Selection Sort.
+# Write a python function to implement Quick Sort.
+
 
 # BUBBLE SORT
 def bubble_sort(data_list):
@@ -11,9 +13,10 @@ def bubble_sort(data_list):
             if data_list[i]>data_list[i+1]:
                 data_list[i],data_list[i+1]=data_list[i+1],data_list[i]
                 
-l=[34,67,12,89,25,50]
+l=[42, 87, 15, 73, 56, 32, 98, 67, 11, 49]
 bubble_sort(l)
 print("Bubble Sort :- ",l)
+print()
 
 
 # MODIFIED BUBBLE SORT
@@ -28,9 +31,10 @@ def modified_bubble_sort(data_list):
         if not flag:
             break
                 
-m=[34,67,12,89,25,50]
+m=[42, 87, 15, 73, 56, 32, 98, 67, 11, 49]
 modified_bubble_sort(m)
 print("Modified Bubble Sort :- ",m)
+print()
 
 
 # SELECTION SORT
@@ -43,9 +47,10 @@ def selection_sort(list1):
                 min_index=j
         list1[i],list1[min_index]=list1[min_index],list1[i]
         
-n=[34,67,12,89,25,50]
+n=[42, 87, 15, 73, 56, 32, 98, 67, 11, 49]
 selection_sort(n)
 print("Selection Sort :- ",n)
+print()
 
 
 # INSERTION SORT
@@ -58,6 +63,23 @@ def insertion_sort(list1):
             j-=1
         list1[j+1]=temp
 
-o=[34,67,12,89,25,50]
+o=[42, 87, 15, 73, 56, 32, 98, 67, 11, 49]
 insertion_sort(o)
 print("Insertion Sort :- ",o)
+print()
+
+
+# QUICK SORT
+def quick_sort(list1):
+    if len(list1)<=1:
+        return list1
+    else:
+        pivot=list1[0]
+        lesser=[x for x in list1[1:] if x<=pivot]
+        greater=[x for x in list1[1:] if x>pivot]
+        return quick_sort(lesser)+[pivot]+quick_sort(greater)
+    
+p=[42, 87, 15, 73, 56, 32, 98, 67, 11, 49]
+p=quick_sort(p)
+print("Quick Sort :- ",p)
+print()
